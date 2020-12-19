@@ -11,9 +11,9 @@ from linebot.models import *
 app = Flask(__name__)
 
 # Channel Access Token
-line_bot_api = LineBotApi('GL6Zjxe2JAY1N4m5t/jrupLbBcp3ODgmEy68o2I/ek5+Sk49kkpUD9449SUO/KfhjPN/eu0fF4PSkE92pF5ZVTm48rduATBJl7ViE0RDyFEf4V/V33RmMVAQ/oMV65lwsgp//hBxAqbro42o8cFK2wdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('rPfGRid7VLK8QwiuTETCCyJXenai8oeucmTM3J0MQ5+y4iChRue1VPV/xH92OVW/hZnKXiLDydvxnhD9uEfsolymxOfjDo5J5ZUc2YAcSE2qV7IZgZDiSGj+VLBE+T9J7S5BceBW2aT3JIebF4sNYwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('bc038fd97e1a5fd24d9a8285aa341c44')
+handler = WebhookHandler('a8b8f4800e756a4a8c9cb600357118ed')
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -33,8 +33,8 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-    message = "pig"
+    message = TextSendMessage(text="hello")
+    #message = "pig"
     line_bot_api.reply_message(event.reply_token, message)
 
 import os

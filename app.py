@@ -8,7 +8,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 from fsm import TocMachine
-from utils import send_text_message
+#from utils import send_text_message
 
 load_dotenv()
 
@@ -39,14 +39,14 @@ app = Flask(__name__, static_url_path="")
 
 
 # get channel_secret and channel_access_token from your environment variable
-channel_secret = os.getenv("LINE_CHANNEL_SECRET", None)
-channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
-if channel_secret is None:
-    print("Specify LINE_CHANNEL_SECRET as environment variable.")
-    sys.exit(1)
-if channel_access_token is None:
-    print("Specify LINE_CHANNEL_ACCESS_TOKEN as environment variable.")
-    sys.exit(1)
+#channel_secret = os.getenv("LINE_CHANNEL_SECRET", None)
+#channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
+#if channel_secret is None:
+#    print("Specify LINE_CHANNEL_SECRET as environment variable.")
+#    sys.exit(1)
+#if channel_access_token is None:
+#    print("Specify LINE_CHANNEL_ACCESS_TOKEN as environment variable.")
+#    sys.exit(1)
 
 line_bot_api = LineBotApi('rPfGRid7VLK8QwiuTETCCyJXenai8oeucmTM3J0MQ5+y4iChRue1VPV/xH92OVW/hZnKXiLDydvxnhD9uEfsolymxOfjDo5J5ZUc2YAcSE2qV7IZgZDiSGj+VLBE+T9J7S5BceBW2aT3JIebF4sNYwdB04t89/1O/w1cDnyilFU=')
 parser = WebhookParser('a8b8f4800e756a4a8c9cb600357118ed')
@@ -116,5 +116,5 @@ def webhook_handler():
 
 
 if __name__ == "__main__":
-    port = os.environ['PORT']
-    app.run(host="0.0.0.0", port=port, debug=True, reloader=True)
+    port = os.environ.get("PORT", 8000)
+    app.run(host="0.0.0.0", port=port, debug=True)

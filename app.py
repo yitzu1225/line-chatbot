@@ -42,7 +42,7 @@ app = Flask(__name__, static_url_path="")
 # Channel Access Token
 line_bot_api = LineBotApi('rPfGRid7VLK8QwiuTETCCyJXenai8oeucmTM3J0MQ5+y4iChRue1VPV/xH92OVW/hZnKXiLDydvxnhD9uEfsolymxOfjDo5J5ZUc2YAcSE2qV7IZgZDiSGj+VLBE+T9J7S5BceBW2aT3JIebF4sNYwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('a8b8f4800e756a4a8c9cb600357118ed')
+parser = WebhookParser('a8b8f4800e756a4a8c9cb600357118ed')
 
 
 @app.route("/callback", methods=["POST"])

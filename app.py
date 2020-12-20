@@ -116,5 +116,6 @@ def webhook_handler():
 
 
 if __name__ == "__main__":
-    port = os.environ['PORT']
-    app.run(host="0.0.0.0", port=PORT, debug=True)
+    #port = os.environ['PORT']
+    port = os.environ.get("PORT", 8000)
+    app.run(host="0.0.0.0", port=port, debug=True)

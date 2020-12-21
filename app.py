@@ -38,7 +38,7 @@ machine = TocMachine(
 app = Flask(__name__, static_url_path="")
 
 
-#get channel_secret and channel_access_token from your environment variable
+# get channel_secret and channel_access_token from your environment variable
 channel_secret = os.getenv("LINE_CHANNEL_SECRET", None)
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 if channel_secret is None:
@@ -116,6 +116,5 @@ def show_fsm():
 
 
 if __name__ == "__main__":
-    #port = os.environ['PORT']
     port = os.environ.get("PORT", 8000)
     app.run(host="0.0.0.0", port=port, debug=True)

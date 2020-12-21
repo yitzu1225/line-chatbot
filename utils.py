@@ -14,12 +14,13 @@ def send_text_message(reply_token, text):
 
 def send_carousel_template(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
+    url = 'https://i.imgur.com/2YLUX87.png'
     Carousel_template = TemplateSendMessage(
         alt_text='Carousel template',
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='http://www.520touxiang.com/uploads/allimg/2018121313/v33lv4g3ix2.jpg',                   
+                    thumbnail_image_url=url,                   
                     title='this is menu1',
                     text='description1',
                     actions=[            
@@ -30,7 +31,7 @@ def send_carousel_template(reply_token):
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='http://www.520touxiang.com/uploads/allimg/2018121313/v33lv4g3ix2.jpg',
+                    thumbnail_image_url=url, 
                     title='this is menu2',
                     text='description2',
                     actions=[

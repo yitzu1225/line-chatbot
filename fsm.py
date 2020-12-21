@@ -1,6 +1,7 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message, send_carousel_template
+from utils import send_text_message
+#, send_carousel_template
 
 
 class TocMachine(GraphMachine):
@@ -18,7 +19,7 @@ class TocMachine(GraphMachine):
     def on_enter_choose_a_pig(self, event):
         print("I'm choosing a pig")
         userid = event.source.user_id
-        
+
         reply_token = event.reply_token
         #send_carousel_template(reply_token)
         send_text_message(reply_token, "Trigger state1")

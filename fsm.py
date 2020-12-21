@@ -9,7 +9,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_choose_a_pig(self, event):
         text = event.message.text
-        return text.lower() == "start"
+        return text.lower() == "go to state1"
 
     def is_going_to_state2(self, event):
         text = event.message.text
@@ -18,9 +18,10 @@ class TocMachine(GraphMachine):
     def on_enter_choose_a_pig(self, event):
         print("I'm choosing a pig")
         userid = event.source.user_id
+        
         reply_token = event.reply_token
-        send_carousel_template(reply_token)
-        #send_text_message(reply_token, "Trigger state1")
+        #send_carousel_template(reply_token)
+        send_text_message(reply_token, "Trigger state1")
         self.go_back()
 
     def on_exit_state1(self):

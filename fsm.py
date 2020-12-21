@@ -1,7 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message
-#, send_carousel_template
+from utils import send_text_message, send_carousel_template
 
 
 class TocMachine(GraphMachine):

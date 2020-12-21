@@ -11,7 +11,7 @@ def send_text_message(reply_token, text):
     line_bot_api.reply_message(reply_token, TextSendMessage(text=text))
 
     return "OK"
-"""
+
 def send_carousel_template(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
     Carousel_template = TemplateSendMessage(
@@ -26,7 +26,7 @@ def send_carousel_template(reply_token):
                         MessageTemplateAction(
                             label='message1',
                             text='message text1'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -37,7 +37,7 @@ def send_carousel_template(reply_token):
                         MessageTemplateAction(
                             label='message2',
                             text='message text2'
-                        ),
+                        )
                     ]
                 )      
             ]
@@ -45,7 +45,7 @@ def send_carousel_template(reply_token):
     )
     line_bot_api.reply_message(reply_token,Carousel_template)
     return "OK"
-"""
+
 
 """
 def send_image_url(id, img_url):

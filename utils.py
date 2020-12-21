@@ -20,11 +20,10 @@ def send_carousel_template(reply_token):
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='http://www.520touxiang.com/uploads/allimg/2018121313/v33lv4g3ix2.jpg'                    
+                    thumbnail_image_url='http://www.520touxiang.com/uploads/allimg/2018121313/v33lv4g3ix2.jpg',                   
                     title='this is menu1',
                     text='description1',
-                    actions=[
-                
+                    actions=[            
                         MessageTemplateAction(
                             label='message1',
                             text='message text1'
@@ -36,7 +35,6 @@ def send_carousel_template(reply_token):
                     title='this is menu2',
                     text='description2',
                     actions=[
-                        
                         MessageTemplateAction(
                             label='message2',
                             text='message text2'

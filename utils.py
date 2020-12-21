@@ -14,7 +14,7 @@ def send_text_message(reply_token, text):
 
 def send_carousel_template(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
-    url = 'http://www.520touxiang.com/uploads/allimg/2018121313/v33lv4g3ix2.jpg'
+    url = 'http://imgur.com/OKpD6be'
     Carousel_template = TemplateSendMessage(
         alt_text='Carousel template',
         template=CarouselTemplate(

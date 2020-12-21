@@ -1,7 +1,7 @@
 import os
 
 from linebot import LineBotApi, WebhookParser
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, PostbackTemplateAction, MessageTemplateAction, URITemplateAction
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, MessageTemplateAction
 
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
@@ -20,42 +20,26 @@ def send_carousel_template(reply_token):
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='顯示在開頭的大圖片網址',
+                    thumbnail_image_url='http://www.520touxiang.com/uploads/allimg/2018121313/v33lv4g3ix2.jpg'                    
                     title='this is menu1',
                     text='description1',
                     actions=[
-                        PostbackTemplateAction(
-                            label='postback1',
-                            text='postback text1',
-                            data='action=buy&itemid=1'
-                        ),
+                
                         MessageTemplateAction(
                             label='message1',
                             text='message text1'
-                        ),
-                        URITemplateAction(
-                            label='uri1',
-                            uri='http://example.com/1'
                         )
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='顯示在開頭的大圖片網址',
+                    thumbnail_image_url='http://www.520touxiang.com/uploads/allimg/2018121313/v33lv4g3ix2.jpg',
                     title='this is menu2',
                     text='description2',
                     actions=[
-                        PostbackTemplateAction(
-                            label='postback2',
-                            text='postback text2',
-                            data='action=buy&itemid=2'
-                        ),
+                        
                         MessageTemplateAction(
                             label='message2',
                             text='message text2'
-                        ),
-                        URITemplateAction(
-                            label='連結2',
-                            uri='http://example.com/2'
                         )
                     ]
                 )      

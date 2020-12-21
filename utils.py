@@ -62,7 +62,8 @@ def send_carousel_template(reply_token):
             ]
         )
     )
-    line_bot_api.reply_message(event.reply_token,Carousel_template)
+    line_bot_api.push_message(reply_token,Carousel_template)
+    return "OK"
 
 """
 def send_image_url(id, img_url):

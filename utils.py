@@ -46,6 +46,11 @@ def send_carousel_template(id):
     )
     line_bot_api.push_message(id,Carousel_template)
     return "OK"
+    
+def push_message(userid, msg):
+    line_bot_api = LineBotApi(access_token)
+    line_bot_api.push_message(userid, TextSendMessage(text=msg))
+    return "OK"
 
 """
 def send_image_url(id, img_url):

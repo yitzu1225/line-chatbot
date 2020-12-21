@@ -20,13 +20,13 @@ def send_carousel_template(reply_token):
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url=url,                   
-                    title='this is menu1',
-                    text='description1',
+                    thumbnail_image_url='https://i.imgur.com/Pi6xR7v.jpg',                   
+                    title='禮貌小豬',
+                    text='禮貌小豬很有禮貌,看到每個人都會打招呼！',
                     actions=[            
                         MessageTemplateAction(
-                            label='message1',
-                            text='message text1'
+                            label='把禮貌小豬帶回家養',
+                            text='pick polite pig'
                         )
                     ]
                 ),

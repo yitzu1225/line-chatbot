@@ -17,9 +17,9 @@ class TocMachine(GraphMachine):
 
     def on_enter_choose_a_pig(self, event):
         print("I'm choosing a pig")
-
+        userid = event.source.user_id
         reply_token = event.reply_token
-        send_carousel_template(reply_token)
+        send_carousel_template(userid)
         self.go_back()
 
     def on_exit_state1(self):

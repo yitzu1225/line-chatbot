@@ -13,7 +13,7 @@ def send_text_message(reply_token, text):
 
     return "OK"
 
-def send_carousel_template(reply_token):
+def send_carousel_template(id):
     line_bot_api = LineBotApi(channel_access_token)
     Carousel_template = TemplateSendMessage(
         alt_text='Carousel template',
@@ -44,7 +44,7 @@ def send_carousel_template(reply_token):
             ]
         )
     )
-    line_bot_api.push_message(reply_token,Carousel_template)
+    line_bot_api.push_message(id,Carousel_template)
     return "OK"
 
 """

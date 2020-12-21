@@ -1,13 +1,13 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message
+from utils import send_text_message, send_carousel_template
 
 
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
 
-    def is_going_to_state1(self, event):
+    def is_going_to_choose_a_pig(self, event):
         text = event.message.text
         return text.lower() == "start"
 
@@ -15,11 +15,11 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "go to state2"
 
-    def on_enter_state1(self, event):
-        print("I'm entering state1")
+    def on_enter_choose_a_pig(self, event):
+        print("I'm choosing a pig")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "take a pig")
+        send_carousel_template(reply_token)
         self.go_back()
 
     def on_exit_state1(self):

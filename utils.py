@@ -32,15 +32,26 @@ def send_carousel_template(reply_token):
                 ),
                 CarouselColumn(
                     thumbnail_image_url=url, 
-                    title='this is menu2',
-                    text='description2',
+                    title='貪吃小豬',
+                    text='貪吃小豬很愛吃，他一次可以吃掉很多飼料！',
                     actions=[
                         MessageTemplateAction(
-                            label='message2',
-                            text='message text2'
+                            label='把貪吃小豬帶回家養',
+                            text='pick hungry pig'
                         )
                     ]
-                )      
+                ), 
+                CarouselColumn(
+                    thumbnail_image_url=url, 
+                    title='愛哭小豬',
+                    text='愛哭小豬很愛吃，他一直哭個不停！',
+                    actions=[
+                        MessageTemplateAction(
+                            label='把愛哭小豬帶回家養',
+                            text='pick crying pig'
+                        )
+                    ]
+                )     
             ]
         )
     )

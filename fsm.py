@@ -72,10 +72,20 @@ class TocMachine(GraphMachine):
         return text.lower() == "be a deer"
 
     def on_enter_deer(self, event):
-        print("My pig is a rap star")
+        print("My pig is a deer")
         reply_token = event.reply_token
         send_1button_template(reply_token, 'https://i.imgur.com/a/m6Me8LV.jpg', "可愛小麋鹿發糖果", "你的小豬扮成麋鹿在人群中發糖果🍬","太可愛了","so cute")
-        self.go_back()     
+        self.go_back() 
+
+    def is_going_to_princess(self, event):
+        text = event.message.text
+        return text.lower() == "so cute"
+
+    def on_enter_princess(self, event):
+        print("My pig is a princess")
+        reply_token = event.reply_token
+        send_1button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "小豬其實是公主!?", "你的小豬在人群中被認出，她其實是從城堡跑出來的小公主！", "真的假的！", "really")
+        self.go_back()    
 
     '''
     def on_exit_state2(self):

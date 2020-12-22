@@ -14,7 +14,7 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap"],
+    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess"],
     transitions=[
         {
             "trigger": "advance",
@@ -46,7 +46,19 @@ machine = TocMachine(
             "dest": "rap",
             "conditions": "is_going_to_rap",
         },
-        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap"], "dest": "user"},
+        {
+            "trigger": "advance",
+            "source": "user",
+            "dest": "deer",
+            "conditions": "is_going_to_deer",
+        },
+        {
+            "trigger": "advance",
+            "source": "user",
+            "dest": "princess",
+            "conditions": "is_going_to_princess",
+        },
+        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,

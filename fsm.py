@@ -7,7 +7,7 @@ from utils import send_carousel_template, send_button_template, send_1button_tem
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
-        
+
     def is_going_to_choose(self, event):
         text = event.message.text
         return text.lower() == "start"
@@ -34,7 +34,7 @@ class TocMachine(GraphMachine):
     def on_enter_initpig2(self, event):
         print("I choose hungry pig")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/0D0VChb.jpg', "小豬好餓", "愛吃小豬完全不意外的肚子餓了，此時你會......", "餵他高級飼料","cheap food","餵他低級飼料","expensive food")
+        send_button_template(reply_token, 'https://i.imgur.com/0D0VChb.jpg', "小豬好餓", "愛吃小豬完全不意外的肚子餓了，此時你會......", "餵他低級飼料","cheap food","餵他高級飼料","expensive food")
     
     def is_going_to_initpig3(self, event):
         text = event.message.text

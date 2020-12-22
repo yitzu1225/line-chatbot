@@ -58,6 +58,30 @@ def send_carousel_template(reply_token):
     line_bot_api.reply_message(reply_token,Carousel_template)
     return "OK"
 
+def send_button_template(reply_token):
+    line_bot_api = LineBotApi(channel_access_token)
+    url = 'https://i.imgur.com/Pi6xR7v.jpg'
+    buttons_template = TemplateSendMessage(
+        alt_text='Buttons Template',
+        template=ButtonsTemplate(
+            title='這是ButtonsTemplate',
+            text='ButtonsTemplate可以傳送text,uri',
+            thumbnail_image_url=url,
+            actions=[
+                MessageTemplateAction(
+                    label='ButtonsTemplate',
+                    text='ButtonsTemplate'
+                ),
+                MessageTemplateAction(
+                    label='ButtonsTemplate',
+                    text='ButtonsTemplate'
+                )   
+            ]
+        )
+    )
+    line_bot_api.reply_message(reply_token, buttons_template)
+    return "OK"
+
 
 """
 def send_image_url(id, img_url):

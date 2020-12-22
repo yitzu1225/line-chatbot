@@ -79,7 +79,7 @@ class TocMachine(GraphMachine):
     def on_enter_rich(self, event):
         print("My pig gives me money")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
+        send_1button_template(reply_token, 'https://i.imgur.com/a/hrZKlmR.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
         self.go_back();
 
     def is_going_to_cheapfood(self, event):
@@ -89,7 +89,7 @@ class TocMachine(GraphMachine):
     def on_enter_cheapfood(self, event):
         print("give my pig cheap food")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "不好了！", "你的小豬嬌生慣養，不肯吃便宜的飼料，此時你會......", "好吧，就買高級飼料給他吃", "expensive food","不理他，強迫他吃", "leave")
+        send_button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "不好了！", "你的小豬嬌生慣養，不肯吃便宜的飼料，此時你會......", "好吧，就買高級飼料給他吃", "expensive food","不理他，強迫他吃", "force")
 
     def is_going_to_expensivefood(self, event):
         text = event.message.text
@@ -98,7 +98,36 @@ class TocMachine(GraphMachine):
     def on_enter_expensivefood(self, event):
         print("give my pig expensive food")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "吃飽了！", "你的小豬吃了高級飼料後心滿意足的睡著了......", "好吧，就買高級飼料給他吃", "expensive food","不理他，強迫他吃", "leave")
+        send_button_template(reply_token, 'https://i.imgur.com/UKQqmFH.jpg', "吃飽了！", "你的小豬吃飽了之後心滿意足的睡著了，此時你會......", "把他叫起來工作！", "go to work", "讓他睡", "sleep")
+
+    def is_going_to_sleep(self, event):
+        text = event.message.text
+        return text.lower() == "sleep"
+
+    def on_enter_sleep(self, event):
+        print("give my pig expensive food")
+        reply_token = event.reply_token
+        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "吃飽睡飽", "你的小豬吃飽睡飽後變得超級可愛！", "好開心❤️", "happy")
+
+    def is_going_to_leave(self, event):
+        text = event.message.text
+        return text.lower() == "force"
+
+    def on_enter_leave(self, event):
+        print("my pig is leaving")
+        reply_token = event.reply_token
+        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "離家出走", "你的小豬受夠你了！", "噢不", "oh no")
+
+    def is_going_to_work(self, event):
+        text = event.message.text
+        return text.lower() == "go to work"
+
+    def on_enter_work(self, event):
+        print("my pig is going to work")
+        reply_token = event.reply_token
+        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "討厭工作", "顯然你的小豬並不喜歡工作，此時你會......", "讓他回去舒服的睡覺", "sleep", "逼迫他繼續工作", "force")
+
+
 
 
 

@@ -14,11 +14,11 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood"],
+    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood", "sleep", "work", "leave"],
     transitions=[
         {
             "trigger": "advance",
-            "source": "rich",
+            "source": ["rich","leave"],
             "dest": "user",
             "conditions": "is_going_to_choose",
         },
@@ -82,7 +82,25 @@ machine = TocMachine(
             "dest": "expensivefood",
             "conditions": "is_going_to_expensivefood",
         },
-        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood"], "dest": "user"},
+        {
+            "trigger": "advance",
+            "source": ["expensivefood","work"],
+            "dest": "sleep",
+            "conditions": "is_going_to_sleep",
+        },
+        {
+            "trigger": "advance",
+            "source": "expensivefood",
+            "dest": "work",
+            "conditions": "is_going_to_work",
+        },
+        {
+            "trigger": "advance",
+            "source": ["work","cheapfood"],
+            "dest": "leave",
+            "conditions": "is_going_to_leave",
+        },
+        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood" "sleep", "work", "leave"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,

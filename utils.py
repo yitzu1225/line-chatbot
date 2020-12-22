@@ -31,7 +31,7 @@ def send_carousel_template(reply_token):
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url=url, 
+                    thumbnail_image_url='https://i.imgur.com/ODOVChb.jpg', 
                     title='貪吃小豬',
                     text='貪吃小豬很愛吃，他一次可以吃掉很多飼料！',
                     actions=[
@@ -42,7 +42,7 @@ def send_carousel_template(reply_token):
                     ]
                 ), 
                 CarouselColumn(
-                    thumbnail_image_url=url, 
+                    thumbnail_image_url='https://i.imgur.com/5lrXUQm.jpg', 
                     title='愛哭小豬',
                     text='愛哭小豬很愛吃，他一直哭個不停！',
                     actions=[
@@ -58,23 +58,22 @@ def send_carousel_template(reply_token):
     line_bot_api.reply_message(reply_token,Carousel_template)
     return "OK"
 
-def send_button_template(reply_token):
+def send_button_template(reply_token, url, title, text, label1, text1, label2, text2):
     line_bot_api = LineBotApi(channel_access_token)
-    url = 'https://i.imgur.com/Pi6xR7v.jpg'
     buttons_template = TemplateSendMessage(
         alt_text='Buttons Template',
         template=ButtonsTemplate(
-            title='這是ButtonsTemplate',
-            text='ButtonsTemplate可以傳送text,uri',
+            title=title,
+            text=text,
             thumbnail_image_url=url,
             actions=[
                 MessageTemplateAction(
-                    label='ButtonsTemplate',
-                    text='ButtonsTemplate'
+                    label=label1,
+                    text=text1
                 ),
                 MessageTemplateAction(
-                    label='ButtonsTemplate',
-                    text='ButtonsTemplate'
+                    label=label2,
+                    text=text2
                 )   
             ]
         )

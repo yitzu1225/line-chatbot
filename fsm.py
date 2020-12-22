@@ -8,13 +8,21 @@ class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
 
+    def is_going_to_start(self, event):
+        text = event.message.text
+        return True
+
+    def on_enter_start(self, event):
+        print("I'm going to start")
+        reply_token = event.reply_token
+        send_text_message(reply_token, "key in start")
+
     def is_going_to_choose(self, event):
         text = event.message.text
         return text.lower() == "start"
 
     def on_enter_choose(self, event):
         print("I'm choosing a pig")
-        userid = event.source.user_id
         reply_token = event.reply_token
         send_carousel_template(reply_token)
     
@@ -81,6 +89,26 @@ class TocMachine(GraphMachine):
         print("My pig gives me money")
         reply_token = event.reply_token
         send_1button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
+
+    def is_going_to_cheapfood(self, event):
+        text = event.message.text
+        return text.lower() == "cheap food"
+
+    def on_enter_cheapfood(self, event):
+        print("give my pig cheap food")
+        reply_token = event.reply_token
+        send_button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "不好了！", "你的小豬嬌生慣養，不肯吃便宜的飼料，此時你會......", "好吧，就買高級飼料給他吃", "expensive food","不理他，強迫他吃", "leave")
+
+    def is_going_to_expensivefood(self, event):
+        text = event.message.text
+        return text.lower() == "expensive food"
+
+    def on_enter_expensivefood(self, event):
+        print("give my pig expensive food")
+        reply_token = event.reply_token
+        send_button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "吃飽了！", "你的小豬吃了高級飼料後心滿意足的睡著了......", "好吧，就買高級飼料給他吃", "expensive food","不理他，強迫他吃", "leave")
+
+
 
     '''
     def on_exit_state2(self):

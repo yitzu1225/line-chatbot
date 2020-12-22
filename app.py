@@ -14,7 +14,7 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess"],
+    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich"],
     transitions=[
         {
             "trigger": "advance",
@@ -24,41 +24,47 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": "choose",
             "dest": "initpig1",
             "conditions": "is_going_to_initpig1",
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": "choose",
             "dest": "initpig2",
             "conditions": "is_going_to_initpig2",
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": "choose",
             "dest": "initpig3",
             "conditions": "is_going_to_initpig3",
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": "initpig1",
             "dest": "rap",
             "conditions": "is_going_to_rap",
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": "initpig1",
             "dest": "deer",
             "conditions": "is_going_to_deer",
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": "deer",
             "dest": "princess",
             "conditions": "is_going_to_princess",
         },
-        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess"], "dest": "user"},
+        {
+            "trigger": "advance",
+            "source": "princess",
+            "dest": "rich",
+            "conditions": "is_going_to_rich",
+        },
+        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess"], "dest": "rich"},
     ],
     initial="user",
     auto_transitions=False,

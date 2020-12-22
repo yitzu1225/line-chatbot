@@ -49,11 +49,10 @@ class TocMachine(GraphMachine):
     
     def is_going_to_initpig3(self, event):
         text = event.message.text
-        return text.lower() == "pick crying pig" or "good"
+        return text.lower() == "pick crying pig"
 
     def on_enter_initpig3(self, event):
         print("I choose crying pig")
-
         reply_token = event.reply_token
         send_text_message(reply_token, "I'm crying pig")
         self.go_back()
@@ -64,11 +63,20 @@ class TocMachine(GraphMachine):
 
     def on_enter_rap(self, event):
         print("My pig is a rap star")
-
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/r4N6XZR.jpg', "精彩的說唱表演", "你的小豬在舞台上大放異彩！","太好了","good")
+        send_1button_template(reply_token, 'https://i.imgur.com/a/r4N6XZR.jpg', "精彩的說唱表演", "你的小豬在舞台上大放異彩！","太好了","good")
+        self.go_back()
 
-        self.go_back()    
+    def is_going_to_deer(self, event):
+        text = event.message.text
+        return text.lower() == "be a deer"
+
+    def on_enter_deer(self, event):
+        print("My pig is a rap star")
+        reply_token = event.reply_token
+        send_1button_template(reply_token, 'https://i.imgur.com/a/m6Me8LV.jpg', "可愛小麋鹿發糖果", "你的小豬扮成麋鹿在人群中發糖果🍬","太可愛了","so cute")
+        self.go_back()     
+
     '''
     def on_exit_state2(self):
         print("Leaving state2")

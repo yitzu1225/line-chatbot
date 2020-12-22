@@ -123,7 +123,7 @@ class TocMachine(GraphMachine):
         return text.lower() == "go to work"
 
     def on_enter_work(self, event):
-        print("my pig is going to work")
+        print("My pig is going to work")
         reply_token = event.reply_token
         send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "討厭工作", "顯然你的小豬並不喜歡工作，此時你會......", "讓他回去舒服的睡覺", "sleep", "逼迫他繼續工作", "force")
 

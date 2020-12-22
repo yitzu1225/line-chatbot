@@ -31,7 +31,7 @@ def send_carousel_template(reply_token):
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://i.imgur.com/ODOVChb.jpg', 
+                    thumbnail_image_url='https://i.imgur.com/0D0VChb.jpg', 
                     title='貪吃小豬',
                     text='貪吃小豬很愛吃，他一次可以吃掉很多飼料！',
                     actions=[
@@ -75,6 +75,25 @@ def send_button_template(reply_token, url, title, text, label1, text1, label2, t
                     label=label2,
                     text=text2
                 )   
+            ]
+        )
+    )
+    line_bot_api.reply_message(reply_token, buttons_template)
+    return "OK"
+
+def send_1button_template(reply_token, url, title, text, label1, text1):
+    line_bot_api = LineBotApi(channel_access_token)
+    buttons_template = TemplateSendMessage(
+        alt_text='Buttons Template',
+        template=ButtonsTemplate(
+            title=title,
+            text=text,
+            thumbnail_image_url=url,
+            actions=[
+                MessageTemplateAction(
+                    label=label1,
+                    text=text1
+                )  
             ]
         )
     )

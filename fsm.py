@@ -1,7 +1,7 @@
 from transitions.extensions import GraphMachine
 
 from utils import send_text_message
-from utils import send_carousel_template, send_button_template
+from utils import send_carousel_template, send_button_template, send_1button_template
 
 
 class TocMachine(GraphMachine):
@@ -49,7 +49,7 @@ class TocMachine(GraphMachine):
     
     def is_going_to_initpig3(self, event):
         text = event.message.text
-        return text.lower() == "pick crying pig"
+        return text.lower() == "pick crying pig" or "good"
 
     def on_enter_initpig3(self, event):
         print("I choose crying pig")
@@ -57,6 +57,18 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         send_text_message(reply_token, "I'm crying pig")
         self.go_back()
+
+    def is_going_to_rap(self, event):
+        text = event.message.text
+        return text.lower() == "be a rap star"
+
+    def on_enter_rap(self, event):
+        print("My pig is a rap star")
+
+        reply_token = event.reply_token
+        send_1button_template(reply_token, 'https://i.imgur.com/r4N6XZR.jpg', "精彩的說唱表演", "你的小豬在舞台上大放異彩！","太好了","good")
+
+        self.go_back()    
     '''
     def on_exit_state2(self):
         print("Leaving state2")

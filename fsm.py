@@ -74,7 +74,7 @@ class TocMachine(GraphMachine):
     def on_enter_deer(self, event):
         print("My pig is a deer")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/a/m6Me8LV.jpg', "可愛小麋鹿發糖果", "你的小豬扮成麋鹿在人群中發糖果🍬","太可愛了","so cute")
+        send_1button_template(reply_token, 'https://i.imgur.com/cwNLvYS.jpg', "可愛小麋鹿發糖果", "你的小豬扮成麋鹿在人群中發糖果🍬","太可愛了","so cute")
         self.go_back() 
 
     def is_going_to_princess(self, event):

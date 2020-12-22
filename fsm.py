@@ -7,16 +7,7 @@ from utils import send_carousel_template, send_button_template, send_1button_tem
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
-
-    def is_going_to_start(self, event):
-        text = event.message.text
-        return True
-
-    def on_enter_start(self, event):
-        print("I'm going to start")
-        reply_token = event.reply_token
-        send_text_message(reply_token, "key in start")
-
+        
     def is_going_to_choose(self, event):
         text = event.message.text
         return text.lower() == "start"
@@ -89,6 +80,7 @@ class TocMachine(GraphMachine):
         print("My pig gives me money")
         reply_token = event.reply_token
         send_1button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
+        self.go_back();
 
     def is_going_to_cheapfood(self, event):
         text = event.message.text

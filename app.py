@@ -114,7 +114,7 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": ["rap","icecream","icecream"],
+            "source": ["rap","icecream"],
             "dest": "cold",
             "conditions": "is_going_to_cold",
         },

@@ -107,7 +107,7 @@ class TocMachine(GraphMachine):
     def on_enter_sleep(self, event):
         print("give my pig expensive food")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "吃飽睡飽", "你的小豬吃飽睡飽後變得超級可愛！", "好開心❤️", "happy")
+        send_1button_template(reply_token, 'https://i.imgur.com/cQ1Bf7X.jpg', "吃飽睡飽", "你的小豬吃飽睡飽後變得超級可愛！", "好開心❤️", "happy")
 
     def is_going_to_leave(self, event):
         text = event.message.text
@@ -125,7 +125,7 @@ class TocMachine(GraphMachine):
     def on_enter_work(self, event):
         print("My pig is going to work")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "討厭工作", "顯然你的小豬並不喜歡工作，此時你會......", "讓他回去舒服的睡覺", "sleep", "逼迫他繼續工作", "force")
+        send_button_template(reply_token, 'https://i.imgur.com/3MSrnlj.jpg', "討厭工作", "顯然你的小豬並不喜歡工作，此時你會......", "讓他回去舒服的睡覺", "sleep", "逼迫他繼續工作", "force")
 
     def is_going_to_cutest(self, event):
         text = event.message.text
@@ -134,7 +134,7 @@ class TocMachine(GraphMachine):
     def on_enter_cutest(self, event):
         print("My pig is the cutest")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "最可愛的豬", "開開心心的小豬超級可愛，榮獲最可愛小豬獎🥰\n並得到一筆獎金", "真的假的！", "really")
+        send_1button_template(reply_token, 'https://i.imgur.com/38GPwJF.jpg', "最可愛的豬", "開開心心的小豬超級可愛，榮獲最可愛小豬獎🥰\n並得到一筆獎金", "真的假的！", "really")
 
     def is_going_to_cold(self, event):
         text = event.message.text

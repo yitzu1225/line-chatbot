@@ -52,7 +52,7 @@ class TocMachine(GraphMachine):
     def on_enter_rap(self, event):
         print("My pig is a rap star")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/5lrXUQm.jpg', "精彩的說唱表演", "你的小豬在舞台上大放異彩！","太好了","good")
+        send_1button_template(reply_token, 'https://i.imgur.com/aiu0McV.jpg', "精彩的說唱表演", "你的小豬在舞台上大放異彩！","太好了","good")
 
     def is_going_to_deer(self, event):
         text = event.message.text
@@ -79,7 +79,7 @@ class TocMachine(GraphMachine):
     def on_enter_rich(self, event):
         print("My pig gives me money")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/JNz2rjT.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
+        send_1button_template(reply_token, 'https://i.imgur.com/MNaMCQN.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
         self.go_back();
 
     def is_going_to_cheapfood(self, event):

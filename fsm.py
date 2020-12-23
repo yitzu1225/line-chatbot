@@ -163,6 +163,15 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "需要補充能量", "你的小豬經過休息後飢腸轆轆，此時你會......", "給他吃高級飼料", "expensive food", "給他吃冰淇淋", "icecream")
 
+    def is_going_to_icecream(self, event):
+        text = event.message.text
+        return text.lower() == "icecream"
+
+    def on_enter_icecream(self, event):
+        print("My pig is eating icecream")
+        reply_token = event.reply_token
+        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "冰淇淋好好吃", "你的小豬吃了冰淇淋之後非常開心！", "可喜可賀", "good")
+
 
     '''
     def on_exit_state2(self):

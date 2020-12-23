@@ -79,7 +79,7 @@ class TocMachine(GraphMachine):
     def on_enter_rich(self, event):
         print("My pig gives me money")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/MNaMCQN.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
+        send_1button_template(reply_token, 'https://i.imgur.com/MNaMCQN.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！!", "收下並謝謝小豬", "thanks")
         self.go_back();
 
     def is_going_to_cheapfood(self, event):

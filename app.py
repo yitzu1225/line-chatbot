@@ -108,7 +108,7 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": "initpig3",
+            "source": ["initpig3","break"],
             "dest": "icecream",
             "conditions": "is_going_to_icecream",
         },

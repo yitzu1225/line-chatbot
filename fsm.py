@@ -79,7 +79,7 @@ class TocMachine(GraphMachine):
     def on_enter_rich(self, event):
         print("My pig gives me money")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/a/hrZKlmR.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
+        send_1button_template(reply_token, 'https://i.imgur.com/JNz2rjT.jpg', "大富大貴", "你的小豬為了報答你的養育之恩，給了你一大筆錢！", "收下並謝謝小豬", "thanks")
         self.go_back();
 
     def is_going_to_cheapfood(self, event):
@@ -89,7 +89,7 @@ class TocMachine(GraphMachine):
     def on_enter_cheapfood(self, event):
         print("give my pig cheap food")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/cSt1oDw.jpg', "不好了！", "你的小豬嬌生慣養，不肯吃便宜的飼料，此時你會......", "好吧，就買高級飼料給他吃", "expensive food","不理他，強迫他吃", "force")
+        send_button_template(reply_token, 'https://i.imgur.com/3AcxVAb.jpg', "不好了！", "你的小豬嬌生慣養，不肯吃便宜的飼料，此時你會......", "好吧，就買高級飼料給他吃", "expensive food","不理他，強迫他吃", "force")
 
     def is_going_to_expensivefood(self, event):
         text = event.message.text
@@ -116,7 +116,7 @@ class TocMachine(GraphMachine):
     def on_enter_leave(self, event):
         print("my pig is leaving")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "離家出走", "你的小豬受夠你了！", "噢不", "oh no")
+        send_1button_template(reply_token, 'https://i.imgur.com/hCdvWhB.png', "離家出走", "你的小豬受夠你了，他氣噗噗的跑走了！", "噢不", "oh no")
 
     def is_going_to_work(self, event):
         text = event.message.text
@@ -143,7 +143,7 @@ class TocMachine(GraphMachine):
     def on_enter_cold(self, event):
         print("My pig is getting cold")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "糟糕了！", "小豬不小心著涼了，此時你會......", "餵他吃藥", "medicine", "讓他先睡一覺", "take a break")
+        send_button_template(reply_token, 'https://i.imgur.com/8scZLD7.jpg', "糟糕了！", "小豬不小心著涼了，此時你會......", "餵他吃藥", "medicine", "讓他先睡一覺", "take a break")
 
     def is_going_to_medicine(self, event):
         text = event.message.text
@@ -152,7 +152,7 @@ class TocMachine(GraphMachine):
     def on_enter_medicine(self, event):
         print("My pig is taking medicine")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "看到藥就想吐", "你的小豬恨透吃藥了，此時你會......", "逼他吃下去", "force", "算了，先讓他睡一覺再說", "take a break")
+        send_button_template(reply_token, 'https://i.imgur.com/93hZOuH.jpg', "看到藥就想吐", "你的小豬恨透吃藥了，此時你會......", "逼他吃下去", "force", "算了，先讓他睡一覺再說", "take a break")
 
     def is_going_to_break(self, event):
         text = event.message.text
@@ -161,7 +161,7 @@ class TocMachine(GraphMachine):
     def on_enter_break(self, event):
         print("My pig is taking a break")
         reply_token = event.reply_token
-        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "需要補充能量", "你的小豬經過休息後飢腸轆轆，此時你會......", "給他吃高級飼料", "expensive food", "給他吃冰淇淋", "icecream")
+        send_button_template(reply_token, 'https://i.imgur.com/gd9WE3D.jpg', "需要補充能量", "你的小豬經過休息後飢腸轆轆，此時你會......", "給他吃高級飼料", "expensive food", "給他吃冰淇淋", "icecream")
 
     def is_going_to_icecream(self, event):
         text = event.message.text
@@ -170,7 +170,7 @@ class TocMachine(GraphMachine):
     def on_enter_icecream(self, event):
         print("My pig is eating icecream")
         reply_token = event.reply_token
-        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "冰淇淋好好吃", "你的小豬吃了冰淇淋之後非常開心！", "可喜可賀", "good")
+        send_1button_template(reply_token, 'https://i.imgur.com/U9K47q2.jpg', "冰淇淋好好吃", "你的小豬吃了冰淇淋之後非常開心！", "可喜可賀", "good")
 
 
     '''

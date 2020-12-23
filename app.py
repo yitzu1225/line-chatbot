@@ -14,7 +14,7 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood", "sleep", "work", "leave"],
+    states=["user", "choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood", "sleep", "work", "leave", "cutest", "icecream", "cold", "medicine", "break"],
     transitions=[
         {
             "trigger": "advance",
@@ -66,7 +66,7 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": "princess",
+            "source": ["princess","cutest"],
             "dest": "rich",
             "conditions": "is_going_to_rich",
         },
@@ -78,13 +78,13 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": ["initpig2","cheapfood"],
+            "source": ["initpig2","cheapfood","initpig3","break"],
             "dest": "expensivefood",
             "conditions": "is_going_to_expensivefood",
         },
         {
             "trigger": "advance",
-            "source": ["expensivefood","work"],
+            "source": ["expensivefood","work","cold"],
             "dest": "sleep",
             "conditions": "is_going_to_sleep",
         },
@@ -96,11 +96,41 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": ["work","cheapfood"],
+            "source": ["work","cheapfood","medicine"],
             "dest": "leave",
             "conditions": "is_going_to_leave",
         },
-        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood" "sleep", "work", "leave"], "dest": "user"},
+        {
+            "trigger": "advance",
+            "source": "sleep",
+            "dest": "cutest",
+            "conditions": "is_going_to_cutest",
+        },
+        {
+            "trigger": "advance",
+            "source": "initpig3",
+            "dest": "icecream",
+            "conditions": "is_going_to_icecream",
+        },
+        {
+            "trigger": "advance",
+            "source": ["rap","icecream","icecream"],
+            "dest": "cold",
+            "conditions": "is_going_to_cold",
+        },
+        {
+            "trigger": "advance",
+            "source": "cold",
+            "dest": "medicine",
+            "conditions": "is_going_to_medicine",
+        },
+        {
+            "trigger": "advance",
+            "source": ["cold","medicine"],
+            "dest": "break",
+            "conditions": "is_going_to_break",
+        },
+        {"trigger": "go_back", "source": ["choose", "initpig1", "initpig2", "initpig3", "rap", "deer", "princess", "rich", "cheapfood", "expensivefood" "sleep", "work", "leave", "cutest", "icecream", "cold", "medicine", "break"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,

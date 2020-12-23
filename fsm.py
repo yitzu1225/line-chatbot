@@ -43,7 +43,7 @@ class TocMachine(GraphMachine):
     def on_enter_initpig3(self, event):
         print("I choose crying pig")
         reply_token = event.reply_token
-        send_text_message(reply_token, "I'm crying pig")
+        send_button_template(reply_token, 'https://i.imgur.com/5lrXUQm.jpg', "小豬哭個不停", "面對嚎啕大哭的小豬你會怎麼做......","給他吃高級飼料","expensive food","給他吃冰淇淋","icecream")
 
     def is_going_to_rap(self, event):
         text = event.message.text
@@ -127,8 +127,41 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "討厭工作", "顯然你的小豬並不喜歡工作，此時你會......", "讓他回去舒服的睡覺", "sleep", "逼迫他繼續工作", "force")
 
+    def is_going_to_cutest(self, event):
+        text = event.message.text
+        return text.lower() == "happy"
 
+    def on_enter_cutest(self, event):
+        print("My pig is the cutest")
+        reply_token = event.reply_token
+        send_1button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "最可愛的豬", "開開心心的小豬超級可愛，榮獲最可愛小豬獎🥰\n並得到一筆獎金", "真的假的！", "really")
 
+    def is_going_to_cold(self, event):
+        text = event.message.text
+        return text.lower() == "good"
+
+    def on_enter_cold(self, event):
+        print("My pig is getting cold")
+        reply_token = event.reply_token
+        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "糟糕了！", "小豬不小心著涼了，此時你會......", "餵他吃藥", "medicine", "讓他先睡一覺", "take a break")
+
+    def is_going_to_medicine(self, event):
+        text = event.message.text
+        return text.lower() == "medicine"
+
+    def on_enter_medicine(self, event):
+        print("My pig is taking medicine")
+        reply_token = event.reply_token
+        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "看到藥就想吐", "你的小豬恨透吃藥了，此時你會......", "逼他吃下去", "force", "算了，先讓他睡一覺再說", "take a break")
+
+    def is_going_to_break(self, event):
+        text = event.message.text
+        return text.lower() == "take a break"
+
+    def on_enter_break(self, event):
+        print("My pig is taking a break")
+        reply_token = event.reply_token
+        send_button_template(reply_token, 'https://i.imgur.com/a/Nb4dS5Y.jpg', "需要補充能量", "你的小豬經過休息後飢腸轆轆，此時你會......", "給他吃高級飼料", "expensive food", "給他吃冰淇淋", "icecream")
 
 
     '''

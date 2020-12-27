@@ -11,3 +11,5 @@
 ### 畫面截圖
 
 ![avatar](https://i.imgur.com/zqjYGYK.png)
+
+<img src="https://i.imgur.com/xuG4K3h.png" style="zoom:70%" />

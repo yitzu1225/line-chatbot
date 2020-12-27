@@ -12,4 +12,4 @@
 
 ![avatar](https://i.imgur.com/zqjYGYK.png)
 
-<img src="https://i.imgur.com/xuG4K3h.png" style="zoom:70%" />
+<img src="https://i.imgur.com/xuG4K3h.png" width="50%" height="50%" />

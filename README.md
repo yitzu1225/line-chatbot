@@ -10,6 +10,12 @@
 
 ### 畫面截圖
 
-![avatar](https://i.imgur.com/zqjYGYK.png)
+<img src="https://i.imgur.com/zqjYGYK.png" width="50%" height="50%" />
 
 <img src="https://i.imgur.com/xuG4K3h.png" width="50%" height="50%" />
+
+<img src="https://i.imgur.com/QQpwpmo.png" width="50%" height="50%" />
+
+<img src="https://i.imgur.com/MeVTrHq.png" width="50%" height="50%" />
+
+<img src="https://i.imgur.com/kpospjw.png" width="50%" height="50%" />
